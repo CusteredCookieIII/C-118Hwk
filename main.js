@@ -2,7 +2,7 @@ counter=0;
 const doodles=["sun", "square", "snowflake", "mug", "rollor coster"];
 score=0;
 function setup() {
-    canvas = createCanvas(280, 280);
+    canvas = createCanvas(200, 200);
     canvas.center();
     background("white");
     canvas.mouseReleased(classifyCanvas);
