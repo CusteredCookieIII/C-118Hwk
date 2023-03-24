@@ -1,6 +1,7 @@
 counter=0;
 const doodles=["sun", "square", "snowflake", "mug", "rollor coster"];
 score=0;
+
 function setup() {
     canvas = createCanvas(200, 200);
     canvas.center();
@@ -46,6 +47,7 @@ function start_timer(){
 object = Math.floor(Math.random() * 5);
 clock = setInterval(interval, 1000);
 console.log(object);
+mls=setInterval(tick, 10);
 doodle = doodles[object];
 document.getElementById("thing").innerHTML = doodle;
 
@@ -60,38 +62,42 @@ function interval(){
     if(counter==20){
         background("white");
         clearInterval(clock);
+        clearInterval(tick);
         counter=0;
     }
 
-    if(object==0 && "thing"=="label sun")
+    
+}
+
+function tick(){
+    if(object==0 && document.getElementById("label") =="label sun")
     {
         score++;
         document.getElementById("points").innerHTML = score;
     }
 
-    if(object==1 && "thing"=="label square")
+    if(object==1 && document.getElementById("label")=="label square")
     {
         score++;
         document.getElementById("points").innerHTML = score;
     }
 
-    if(object==2 && "thing"=="label snowflake")
+    if(object==2 && document.getElementById("label")=="label snowflake")
     {
         score++;
         document.getElementById("label points").innerHTML = score;
     }
 
-    if(object==3 && "thing"=="label mug")
+    if(object==3 && document.getElementById("label")=="label mug")
     {
         score++;
         document.getElementById("points").innerHTML = score;
     }
 
-    if(object==4 && "thing"=="label roller_coaster")
+    if(object==4 && document.getElementById("label")=="label roller_coaster")
     {
         score++;
         score++;
         document.getElementById("points").innerHTML = score;
     }
-    
 }
